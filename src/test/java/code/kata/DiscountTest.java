@@ -18,7 +18,7 @@ public class DiscountTest {
     }
 
     @Test
-    public void testOrderDiscountForOrderWithDiscount() {
+    public void testOrderDiscountForOrderWithDiscountAndPercentageDiscounter() {
         final List<Product> products = Arrays.asList(
                 new Product("1", "Coffee", 100.00),
                 new Product("2", "Rice", 200.00)
