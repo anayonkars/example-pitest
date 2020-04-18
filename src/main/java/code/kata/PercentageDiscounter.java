@@ -6,4 +6,8 @@ public class PercentageDiscounter {
     public PercentageDiscounter(double percentage) {
         this.percentage = percentage;
     }
+
+    public double getPercentage() {
+        return percentage;
+    }
 }
