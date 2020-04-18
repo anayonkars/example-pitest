@@ -1,15 +1,16 @@
 package code.kata;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Order {
 
     private final List<Product> products;
-    private final PriceEligibility priceEligibility;
+    private final Predicate<Double> priceEligibility;
     private final PercentageDiscounter percentageDiscounter;
 
     public Order(List<Product> products,
-                 PriceEligibility priceEligibility,
+                 Predicate<Double> priceEligibility,
                  PercentageDiscounter percentageDiscounter) {
 
         this.products = products;
@@ -19,7 +20,7 @@ public class Order {
 
     public double calculateDiscount() {
         double totalPrice = getTotalPrice();
-        if(priceEligibility.isEligible(totalPrice)) {
+        if(priceEligibility.test(totalPrice)) {
             return totalPrice * percentageDiscounter.getPercentage() / 100;
         }
         return 0;
