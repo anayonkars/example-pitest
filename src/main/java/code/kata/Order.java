@@ -21,10 +21,7 @@ public class Order {
 
     public double calculateDiscount() {
         double totalPrice = getTotalPrice();
-        if(priceEligibility.test(totalPrice)) {
-            return discounter.apply(totalPrice);
-        }
-        return 0;
+        return priceEligibility.test(totalPrice) ? discounter.apply(totalPrice) : 0;
     }
 
     private double getTotalPrice() {
