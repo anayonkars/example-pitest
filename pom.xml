@@ -21,9 +21,22 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.5.1</version>
+                <configuration>
+                    <targetClasses>code.kata.*</targetClasses>
+                    <targetTests>code.kata.*</targetTests>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
