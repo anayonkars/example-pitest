@@ -15,6 +15,7 @@
                 <configuration>
                     <source>8</source>
                     <target>8</target>
+                    <!--<mutators>ALL</mutators>-->
                 </configuration>
             </plugin>
             <plugin>
